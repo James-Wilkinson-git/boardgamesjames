@@ -67,7 +67,7 @@ export function Layout() {
           <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
             Pull up a chair.
           </p>
-          <h2 className="mt-3 font-['Shrikhand'] text-5xl leading-none">
+          <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-5xl">
             There’s room at this table.
           </h2>
           <button

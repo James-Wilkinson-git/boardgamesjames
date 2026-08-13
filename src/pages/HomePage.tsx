@@ -26,7 +26,7 @@ function SocialFeed({
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Latest from
           </p>
-          <h3 className="mt-2 text-4xl font-black">{title}</h3>
+          <h3 className="mt-2 text-3xl font-black md:text-4xl">{title}</h3>
         </div>
         <a
           className="rounded-full border-2 border-current px-4 py-2 text-sm font-black"
@@ -60,12 +60,12 @@ function SocialFeed({
 export function HomePage() {
   return (
     <>
-      <section className="mx-auto grid min-h-[720px] max-w-screen-2xl items-center gap-10 px-5 pb-20 pt-8 md:px-10 lg:grid-cols-2 lg:px-16">
+      <section className="mx-auto grid max-w-screen-2xl items-center gap-4 px-5 pb-12 pt-8 md:px-10 md:pb-20 lg:min-h-[720px] lg:grid-cols-2 lg:gap-10 lg:px-16">
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Queer · Autistic · Euro-gamer
           </p>
-          <h1 className="mt-4 font-['Shrikhand'] text-8xl leading-[.82] text-purple-800">
+          <h1 className="mt-4 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-8xl md:leading-[.82]">
             Board games
             <br />
             <span className="text-pink-500">
@@ -89,9 +89,9 @@ export function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="relative mx-auto grid min-h-[560px] w-full max-w-xl place-items-center rounded-[3rem] p-8 ">
+        <div className="relative mx-auto grid min-h-64 w-full max-w-xs place-items-center md:min-h-96 md:max-w-md lg:min-h-[560px] lg:max-w-xl lg:p-8">
           <img
-            className="max-h-[540px] w-full object-contain"
+            className="max-h-72 w-full object-contain md:max-h-96 lg:max-h-[540px]"
             src="/assets/bo-board-games.png"
             alt="Bo, the Board Gaymes James cartoon mascot, sitting with colourful dice"
           />
@@ -102,59 +102,63 @@ export function HomePage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           What you’ll find here
         </p>
-        <h2 className="mt-4 max-w-5xl font-['Shrikhand'] text-6xl leading-none">
+        <h2 className="mt-4 max-w-5xl font-['Shrikhand'] text-4xl leading-none md:text-6xl">
           Reviews, guides, and industry help from my side of the table.
         </h2>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           <Link
-            className="flex min-h-80 flex-col rounded-[2rem] bg-teal-300 p-7 text-slate-950 transition-transform hover:-translate-y-2"
+            className="flex flex-col rounded-[2rem] bg-teal-300 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
             to="/marty"
           >
             <img
-              className="mb-auto h-32 w-full object-contain"
+              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
               src="/assets/bo-tabletop.png"
               alt="Bo considering a board game at the table"
             />
             <p className="text-xs font-black uppercase tracking-widest">
               Rating games
             </p>
-            <h3 className="mt-3 text-4xl font-black">Meet M.A.R.T.Y.</h3>
+            <h3 className="mt-3 text-3xl font-black md:text-4xl">
+              Meet M.A.R.T.Y.
+            </h3>
             <p className="mt-5 leading-relaxed">
               My weighted system for turning five parts of a play experience
               into a fairer score.
             </p>
           </Link>
           <Link
-            className="flex min-h-80 flex-col rounded-[2rem] bg-violet-300 p-7 text-slate-950 transition-transform hover:-translate-y-2"
+            className="flex flex-col rounded-[2rem] bg-violet-300 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
             to="/brain-geek-guide"
           >
             <img
-              className="mb-auto h-32 w-full object-contain"
+              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
               src="assets/brain-geek-guide.png"
               alt="Bo riding a rocket"
             />
             <p className="text-xs font-black uppercase tracking-widest">
               Knowing your needs
             </p>
-            <h3 className="mt-3 text-4xl font-black">Brain Geek Guide</h3>
+            <h3 className="mt-3 text-3xl font-black md:text-4xl">
+              Brain Geek Guide
+            </h3>
             <p className="mt-5 leading-relaxed">
               A neurodivergent lens for understanding what it's like to play a
               game as a neurodivergent
             </p>
           </Link>
           <Link
-            className="flex min-h-80 flex-col rounded-[2rem] bg-orange-400 p-7 text-slate-950 transition-transform hover:-translate-y-2"
+            className="flex flex-col rounded-[2rem] bg-orange-400 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
             to="/consulting"
           >
             <img
-              className="mb-auto h-32 w-full object-contain"
+              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
               src="/assets/bo-rocket.png"
               alt="Bo riding a rocket"
             />
             <p className="text-xs font-black uppercase tracking-widest">
               Industry work
             </p>
-            <h3 className="mt-3 text-4xl font-black">
+            <h3 className="mt-3 text-3xl font-black md:text-4xl">
               Development & Player Experience
             </h3>
             <p className="mt-5 leading-relaxed">
@@ -171,7 +175,7 @@ export function HomePage() {
             <p className="text-xs font-black uppercase tracking-[.18em]">
               Fresh from the feeds
             </p>
-            <h2 className="mt-3 text-5xl font-black tracking-tight md:text-7xl">
+            <h2 className="mt-3 text-4xl font-black tracking-tight md:text-7xl">
               Have you interacted yet?
             </h2>
           </div>
@@ -199,7 +203,7 @@ export function HomePage() {
           <p className="text-xs font-black uppercase tracking-[.18em]">
             For publishers & partners
           </p>
-          <h2 className="mt-3 text-5xl font-black leading-none tracking-tight md:text-7xl">
+          <h2 className="mt-3 text-4xl font-black leading-none tracking-tight md:text-7xl">
             The numbers are live. The perspective is mine.
           </h2>
         </div>

@@ -6,7 +6,7 @@ export function NotFoundPage() {
       <p className="text-xs font-black uppercase tracking-[.18em]">
         404 · Lost a piece?
       </p>
-      <h1 className="text-5xl font-black md:text-7xl">
+      <h1 className="text-4xl font-black md:text-7xl">
         This page isn’t at the table.
       </h1>
       <Link

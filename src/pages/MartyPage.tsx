@@ -7,12 +7,12 @@ const copy = "mt-4 max-w-3xl leading-relaxed text-white/65";
 export function MartyPage() {
   return (
     <article>
-      <header className="mx-auto grid min-h-[620px] max-w-screen-2xl items-center gap-12 px-5 py-10 md:px-10 lg:grid-cols-[1.2fr_.8fr] lg:px-16">
+      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-8 md:px-10 md:py-10 lg:min-h-[620px] lg:grid-cols-[1.2fr_.8fr] lg:gap-12 lg:px-16">
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
             My board game rating system
           </p>
-          <h1 className="mt-5 font-['Shrikhand'] text-7xl leading-[.85] text-purple-800">
+          <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             The <span className="text-pink-500">M.A.R.T.Y.</span> scale!
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
@@ -29,7 +29,7 @@ export function MartyPage() {
           </a>
         </div>
         <img
-          className="mx-auto max-h-[500px] w-full object-contain"
+          className="mx-auto max-h-72 w-full max-w-xs object-contain md:max-h-96 md:max-w-md lg:max-h-[500px] lg:max-w-none"
           src="/assets/bo-cowboy.png"
           alt="Bo dressed as a cowboy"
         />
@@ -51,7 +51,7 @@ export function MartyPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           The five categories
         </p>
-        <h2 className="mt-3 font-['Shrikhand'] text-6xl md:text-8xl">
+        <h2 className="mt-3 font-['Shrikhand'] text-4xl md:text-8xl">
           What goes into the number.
         </h2>
         <div className="mt-14">
@@ -143,7 +143,7 @@ export function MartyPage() {
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Why weighted?
           </p>
-          <h2 className="mt-3 font-['Shrikhand'] text-6xl leading-none md:text-8xl">
+          <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
             Less hype. More signal.
           </h2>
         </div>
@@ -202,7 +202,7 @@ export function MartyPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Another way to understand a game
         </p>
-        <h2 className="my-6 font-['Shrikhand'] text-6xl leading-none md:text-8xl">
+        <h2 className="my-6 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
           Now meet the Brain Geek Guide.
         </h2>
         <Link

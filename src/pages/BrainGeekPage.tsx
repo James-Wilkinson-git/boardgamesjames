@@ -6,12 +6,12 @@ const card =
 export function BrainGeekPage() {
   return (
     <article>
-      <header className="mx-auto grid min-h-[560px] max-w-screen-2xl items-center gap-10 px-5 py-12 md:px-10 lg:grid-cols-[1.2fr_.8fr] lg:px-16">
+      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-8 md:px-10 md:py-12 lg:min-h-[560px] lg:grid-cols-[1.2fr_.8fr] lg:gap-10 lg:px-16">
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
             A neurodivergent perspective on play
           </p>
-          <h1 className="mt-5 font-['Shrikhand'] text-7xl leading-[.85] text-purple-800">
+          <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             Know what a game asks of your brain.
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
@@ -28,7 +28,7 @@ export function BrainGeekPage() {
           </a>
         </div>
         <img
-          className="mx-auto max-h-[360px] w-full object-contain"
+          className="mx-auto max-h-60 w-full max-w-xs object-contain md:max-h-80 md:max-w-md lg:max-h-[360px] lg:max-w-none"
           src="/assets/brain-geek-guide.png"
           alt="Brain Geek Guide rainbow brain logo"
         />
@@ -49,7 +49,7 @@ export function BrainGeekPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Five dimensions
         </p>
-        <h2 className="mt-3 font-['Shrikhand'] text-6xl md:text-8xl">
+        <h2 className="mt-3 font-['Shrikhand'] text-4xl md:text-8xl">
           Know what the table is asking.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
@@ -122,7 +122,7 @@ export function BrainGeekPage() {
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Information, not opinion
           </p>
-          <h2 className="mt-3 font-['Shrikhand'] text-6xl leading-none md:text-8xl">
+          <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
             Your needs are the point.
           </h2>
         </div>
@@ -186,7 +186,7 @@ export function BrainGeekPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           How I score the whole experience
         </p>
-        <h2 className="my-6 font-['Shrikhand'] text-6xl leading-none md:text-8xl">
+        <h2 className="my-6 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
           Meet M.A.R.T.Y.
         </h2>
         <Link
