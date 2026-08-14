@@ -83,11 +83,11 @@ export function MediaPage() {
       </section>
 
       <section className="grid gap-8 bg-yellow-300 px-5 py-12 md:px-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+        <p className="text-xs font-black uppercase tracking-[.18em]">
           A direct line to board gamers
         </p>
         <div>
-          <h2 className="font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-7xl">
+          <h2 className="font-['Shrikhand'] text-4xl leading-none  md:text-7xl">
             Live on Twitch. Embedded on BoardGameGeek.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed">
@@ -100,7 +100,7 @@ export function MediaPage() {
       </section>
 
       <section className="bg-violet-300 px-5 py-12 text-slate-950 md:px-10 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+        <p className="text-xs font-black uppercase tracking-[.18em] ">
           Established credibility
         </p>
         <div className="mt-7 grid gap-8 sm:grid-cols-3">
@@ -126,7 +126,7 @@ export function MediaPage() {
       </section>
 
       <section className="px-5 py-16 md:px-10 md:py-20 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+        <p className="text-xs font-black uppercase tracking-[.18em] ">
           Why work with James
         </p>
         <h2 className="mt-3 max-w-5xl font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-7xl">
@@ -207,7 +207,7 @@ export function MediaPage() {
       </section>
 
       <section className="px-5 py-16 md:px-10 md:py-20 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+        <p className="text-xs font-black uppercase tracking-[.18em] ">
           By platform
         </p>
         <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-8xl">
@@ -350,7 +350,7 @@ export function MediaPage() {
       </section>
 
       <section className="bg-yellow-300 px-5 py-16 md:px-10 md:py-20 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+        <p className="text-xs font-black uppercase tracking-[.18em] ">
           Work together
         </p>
         <h2 className="mt-3 max-w-5xl font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-8xl">

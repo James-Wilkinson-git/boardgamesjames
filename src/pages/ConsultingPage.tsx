@@ -139,7 +139,7 @@ export function ConsultingPage() {
       <section className="bg-amber-50 px-5 py-20 md:px-10 md:py-28 lg:px-16">
         <div className="mx-auto grid max-w-screen-2xl gap-12 lg:grid-cols-[.8fr_1.2fr]">
           <div>
-            <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+            <p className="text-xs font-black uppercase tracking-[.18em] ">
               Selected work
             </p>
             <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-8xl">

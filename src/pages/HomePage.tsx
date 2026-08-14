@@ -1,137 +1,9 @@
-import { ArrowRight, BarChart3 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, BarChart3, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { pageMasthead } from "../components/pageStyles";
 
 const button =
   "inline-flex items-center gap-2 rounded-full border-2 border-slate-950 px-6 py-3 text-sm font-black transition-transform hover:-translate-y-1";
-
-function SocialFeed({
-  title,
-  handle,
-  href,
-  children,
-  colour,
-}: {
-  title: string;
-  handle: string;
-  href: string;
-  children: React.ReactNode;
-  colour: string;
-}) {
-  return (
-    <article className="overflow-hidden rounded-[2rem] border-2 border-slate-950 bg-white">
-      <div className={`flex items-center justify-between p-7 ${colour}`}>
-        <div>
-          <p className="text-xs font-black uppercase tracking-[.18em]">
-            Latest from
-          </p>
-          <h3 className="mt-2 text-3xl font-black md:text-4xl">{title}</h3>
-        </div>
-        <a
-          className="rounded-full border-2 border-current px-4 py-2 text-sm font-black"
-          href={href}
-        >
-          Open profile
-        </a>
-      </div>
-      <div className="bg-white text-slate-950">{children}</div>
-    </article>
-  );
-}
-
-function InstagramWidget() {
-  useEffect(() => {
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      'script[src="https://www.instagram.com/embed.js"]',
-    );
-
-    if (existingScript) {
-      window.instgrm?.Embeds.process();
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.instagram.com/embed.js";
-    document.body.appendChild(script);
-  }, []);
-
-  return (
-    <div className="instagram-widget flex min-h-[460px] items-start justify-center overflow-hidden p-3">
-      <blockquote
-        className="instagram-media w-full"
-        data-instgrm-permalink="https://www.instagram.com/boardgaymesjames/"
-        data-instgrm-version="14"
-      >
-        <a href="https://www.instagram.com/boardgaymesjames/">
-          View @boardgaymesjames on Instagram
-        </a>
-      </blockquote>
-    </div>
-  );
-}
-
-const youtubeVideos = [
-  {
-    id: "6h5KJMf2hvU",
-    title: "Whisperwood Board Game Kickstarter Buying Guide",
-  },
-  {
-    id: "03DeD0AKD4Q",
-    title: "Capsule Collector Board Game Teach and Playthrough",
-  },
-  {
-    id: "jn_LiuXfzZc",
-    title: "Garden Club Board Game Teach and Playthrough",
-  },
-];
-
-function YouTubeWidget() {
-  const [selectedVideo, setSelectedVideo] = useState(youtubeVideos[0]);
-
-  return (
-    <div>
-      <iframe
-        className="block aspect-video w-full border-0 bg-slate-950"
-        src={`https://www.youtube-nocookie.com/embed/${selectedVideo.id}?rel=0`}
-        title={selectedVideo.title}
-        loading="lazy"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
-      <div className="grid grid-cols-3 gap-2 p-3 md:gap-3 md:p-4">
-        {youtubeVideos.map((video) => (
-          <button
-            key={video.id}
-            type="button"
-            className={`overflow-hidden rounded-xl border-2 text-left transition ${selectedVideo.id === video.id ? "border-pink-500" : "border-transparent opacity-70 hover:opacity-100"}`}
-            onClick={() => setSelectedVideo(video)}
-            aria-label={`Play ${video.title}`}
-            aria-pressed={selectedVideo.id === video.id}
-          >
-            <img
-              className="aspect-video w-full object-cover"
-              src={`https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`}
-              alt=""
-              loading="lazy"
-            />
-            <span className="line-clamp-2 block p-2 text-xs font-bold leading-tight">
-              {video.title}
-            </span>
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-declare global {
-  interface Window {
-    instgrm?: { Embeds: { process: () => void } };
-  }
-}
 
 export function HomePage() {
   return (
@@ -246,33 +118,49 @@ export function HomePage() {
       </section>
 
       <section className="px-5 py-20 md:px-10 md:py-28 lg:px-16">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[.18em]">
-              Fresh from the feeds
-            </p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight md:text-7xl">
-              Have you interacted yet?
-            </h2>
-          </div>
-        </div>
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          <SocialFeed
-            title="YouTube"
-            handle="@BoardGaymesJames"
+        <p className="text-xs font-black uppercase tracking-[.18em]">
+          Around the table
+        </p>
+        <h2 className="mt-3 text-4xl font-black tracking-tight md:text-7xl">
+          Follow me wherever you play.
+        </h2>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <a
+            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-yellow-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
             href="https://www.youtube.com/@BoardGaymesJames"
-            colour="bg-yellow-300"
+            target="_blank"
+            rel="noreferrer"
           >
-            <YouTubeWidget />
-          </SocialFeed>
-          <SocialFeed
-            title="Instagram"
-            handle="@boardgaymesjames"
+            <span>YouTube</span>
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <a
+            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-pink-500 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
             href="https://www.instagram.com/boardgaymesjames/"
-            colour="bg-pink-500 text-slate-950"
+            target="_blank"
+            rel="noreferrer"
           >
-            <InstagramWidget />
-          </SocialFeed>
+            <span>Instagram</span>
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <a
+            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-violet-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
+            href="https://www.twitch.tv/boardgaymesjames"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>Twitch</span>
+            <ExternalLink aria-hidden="true" />
+          </a>
+          <a
+            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-teal-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
+            href="https://boardgamegeek.com/user/BoardGaymesJames"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>BoardGameGeek</span>
+            <ExternalLink aria-hidden="true" />
+          </a>
         </div>
       </section>
 
