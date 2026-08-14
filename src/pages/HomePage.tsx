@@ -1,5 +1,7 @@
 import { ArrowRight, BarChart3 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { pageMasthead } from "../components/pageStyles";
 
 const button =
   "inline-flex items-center gap-2 rounded-full border-2 border-slate-950 px-6 py-3 text-sm font-black transition-transform hover:-translate-y-1";
@@ -8,20 +10,18 @@ function SocialFeed({
   title,
   handle,
   href,
-  embedUrl,
+  children,
   colour,
 }: {
   title: string;
   handle: string;
   href: string;
-  embedUrl?: string;
+  children: React.ReactNode;
   colour: string;
 }) {
   return (
-    <article
-      className={`overflow-hidden rounded-[2rem] border-2 border-slate-950 ${colour}`}
-    >
-      <div className="flex items-center justify-between p-7">
+    <article className="overflow-hidden rounded-[2rem] border-2 border-slate-950 bg-white">
+      <div className={`flex items-center justify-between p-7 ${colour}`}>
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Latest from
@@ -35,32 +35,108 @@ function SocialFeed({
           Open profile
         </a>
       </div>
-      {embedUrl ? (
-        <iframe
-          className="block h-[460px] w-full border-0 bg-white"
-          src={embedUrl}
-          title={`${title} latest content`}
-          loading="lazy"
-        />
-      ) : (
-        <div className="flex h-80 flex-col items-center justify-center gap-5 bg-white p-10 text-center text-slate-950">
-          <p className="max-w-sm">
-            Connect the {title} widget URL to show the newest posts here
-            automatically.
-          </p>
-          <a className={`${button} bg-slate-950 text-white`} href={href}>
-            See {handle}
-          </a>
-        </div>
-      )}
+      <div className="bg-white text-slate-950">{children}</div>
     </article>
   );
+}
+
+function InstagramWidget() {
+  useEffect(() => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://www.instagram.com/embed.js"]',
+    );
+
+    if (existingScript) {
+      window.instgrm?.Embeds.process();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.instagram.com/embed.js";
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div className="instagram-widget flex min-h-[460px] items-start justify-center overflow-hidden p-3">
+      <blockquote
+        className="instagram-media w-full"
+        data-instgrm-permalink="https://www.instagram.com/boardgaymesjames/"
+        data-instgrm-version="14"
+      >
+        <a href="https://www.instagram.com/boardgaymesjames/">
+          View @boardgaymesjames on Instagram
+        </a>
+      </blockquote>
+    </div>
+  );
+}
+
+const youtubeVideos = [
+  {
+    id: "6h5KJMf2hvU",
+    title: "Whisperwood Board Game Kickstarter Buying Guide",
+  },
+  {
+    id: "03DeD0AKD4Q",
+    title: "Capsule Collector Board Game Teach and Playthrough",
+  },
+  {
+    id: "jn_LiuXfzZc",
+    title: "Garden Club Board Game Teach and Playthrough",
+  },
+];
+
+function YouTubeWidget() {
+  const [selectedVideo, setSelectedVideo] = useState(youtubeVideos[0]);
+
+  return (
+    <div>
+      <iframe
+        className="block aspect-video w-full border-0 bg-slate-950"
+        src={`https://www.youtube-nocookie.com/embed/${selectedVideo.id}?rel=0`}
+        title={selectedVideo.title}
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+      <div className="grid grid-cols-3 gap-2 p-3 md:gap-3 md:p-4">
+        {youtubeVideos.map((video) => (
+          <button
+            key={video.id}
+            type="button"
+            className={`overflow-hidden rounded-xl border-2 text-left transition ${selectedVideo.id === video.id ? "border-pink-500" : "border-transparent opacity-70 hover:opacity-100"}`}
+            onClick={() => setSelectedVideo(video)}
+            aria-label={`Play ${video.title}`}
+            aria-pressed={selectedVideo.id === video.id}
+          >
+            <img
+              className="aspect-video w-full object-cover"
+              src={`https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`}
+              alt=""
+              loading="lazy"
+            />
+            <span className="line-clamp-2 block p-2 text-xs font-bold leading-tight">
+              {video.title}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+declare global {
+  interface Window {
+    instgrm?: { Embeds: { process: () => void } };
+  }
 }
 
 export function HomePage() {
   return (
     <>
-      <section className="mx-auto grid max-w-screen-2xl items-center gap-4 px-5 pb-12 pt-8 md:px-10 md:pb-20 lg:min-h-[720px] lg:grid-cols-2 lg:gap-10 lg:px-16">
+      <section className={pageMasthead}>
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Queer · Autistic · Euro-gamer
@@ -69,7 +145,7 @@ export function HomePage() {
             Board games
             <br />
             <span className="text-pink-500">
-              through a queer, autistic lens.
+              through a queer & autistic lens.
             </span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-700 md:text-xl">
@@ -79,7 +155,7 @@ export function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              className={`${button} bg-pink-500 text-white shadow-[5px_5px_0_#020617]`}
+              className={`${button} bg-pink-500 text-slate-950 shadow-[5px_5px_0_#020617]`}
               to="/media"
             >
               <BarChart3 className="size-4" /> View media kit
@@ -89,9 +165,9 @@ export function HomePage() {
             </Link>
           </div>
         </div>
-        <div className="relative mx-auto grid min-h-64 w-full max-w-xs place-items-center md:min-h-96 md:max-w-md lg:min-h-[560px] lg:max-w-xl lg:p-8">
+        <div className="relative mx-auto grid w-full max-w-xs place-items-start md:max-w-md lg:max-w-none">
           <img
-            className="max-h-72 w-full object-contain md:max-h-96 lg:max-h-[540px]"
+            className="max-h-72 w-full object-contain md:max-h-96 lg:max-h-[460px]"
             src="/assets/bo-board-games.png"
             alt="Bo, the Board Gaymes James cartoon mascot, sitting with colourful dice"
           />
@@ -185,20 +261,22 @@ export function HomePage() {
             title="YouTube"
             handle="@BoardGaymesJames"
             href="https://www.youtube.com/@BoardGaymesJames"
-            embedUrl={import.meta.env.VITE_YOUTUBE_WIDGET_URL}
             colour="bg-yellow-300"
-          />
+          >
+            <YouTubeWidget />
+          </SocialFeed>
           <SocialFeed
             title="Instagram"
             handle="@boardgaymesjames"
             href="https://www.instagram.com/boardgaymesjames/"
-            embedUrl={import.meta.env.VITE_INSTAGRAM_WIDGET_URL}
-            colour="bg-pink-500 text-white"
-          />
+            colour="bg-pink-500 text-slate-950"
+          >
+            <InstagramWidget />
+          </SocialFeed>
         </div>
       </section>
 
-      <section className="grid gap-10 bg-pink-500 px-5 py-20 text-white md:px-10 md:py-28 lg:grid-cols-2 lg:px-16">
+      <section className="grid gap-10 bg-pink-500 px-5 py-20 text-slate-950 md:px-10 md:py-28 lg:grid-cols-2 lg:px-16">
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em]">
             For publishers & partners

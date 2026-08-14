@@ -1,11 +1,12 @@
 import { ArrowRight, Mail } from "lucide-react";
+import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
 
 export function MediaPage() {
   return (
     <article>
-      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-10 md:px-10 md:py-16 lg:min-h-[620px] lg:grid-cols-[1.2fr_.8fr] lg:gap-12 lg:px-16">
+      <header className={pageMasthead}>
         <div>
-          <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+          <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             Media kit · August 2026
           </p>
           <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
@@ -19,7 +20,7 @@ export function MediaPage() {
           </p>
           <button
             type="button"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-white shadow-[5px_5px_0_#020617]"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617]"
             onClick={() =>
               (window.location.href = [
                 "mai",
@@ -35,7 +36,7 @@ export function MediaPage() {
           </button>
         </div>
         <img
-          className="mx-auto max-h-72 w-full max-w-xs object-contain md:max-h-96 md:max-w-md lg:max-h-[500px] lg:max-w-none"
+          className={pageMastheadImage}
           src="/assets/bo-media.png"
           alt="Bo dressed as an adventure-film archaeologist"
         />
@@ -59,7 +60,7 @@ export function MediaPage() {
             <p className="mt-5 font-bold">Latest 28 days · 117% growth</p>
           </article>
           <div className="grid gap-5 sm:grid-cols-2">
-            <article className="rounded-[2rem] bg-pink-500 p-7">
+            <article className="rounded-[2rem] bg-pink-500 p-7 text-slate-950">
               <p className="text-xs font-black uppercase tracking-[.18em]">
                 Instagram views
               </p>
@@ -126,6 +127,87 @@ export function MediaPage() {
 
       <section className="px-5 py-16 md:px-10 md:py-20 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+          Why work with James
+        </p>
+        <h2 className="mt-3 max-w-5xl font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-7xl">
+          Coverage that helps players choose their next game.
+        </h2>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <article className="rounded-[2rem] bg-teal-300 p-7">
+            <p className="text-xs font-black uppercase tracking-[.18em]">
+              More than a rules recap
+            </p>
+            <h3 className="mt-3 text-3xl font-black">The play experience</h3>
+            <p className="mt-4 leading-relaxed">
+              Reviews show what a game feels like to learn, teach, and play.
+            </p>
+          </article>
+          <article className="rounded-[2rem] bg-violet-300 p-7">
+            <p className="text-xs font-black uppercase tracking-[.18em]">
+              Two clear frameworks
+            </p>
+            <h3 className="mt-3 text-3xl font-black">
+              M.A.R.T.Y. + Brain Geek
+            </h3>
+            <p className="mt-4 leading-relaxed">
+              Transparent ratings meet an autistic lens on cognitive load,
+              accessibility, and table experience.
+            </p>
+          </article>
+          <article className="rounded-[2rem] bg-orange-400 p-7">
+            <p className="text-xs font-black uppercase tracking-[.18em]">
+              Where players discover
+            </p>
+            <h3 className="mt-3 text-3xl font-black">Multi-platform reach</h3>
+            <p className="mt-4 leading-relaxed">
+              Video, live, social, and BGG coverage meet players while they are
+              researching games.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 px-5 py-16 text-white md:px-10 md:py-20 lg:px-16">
+        <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
+          Industry feedback
+        </p>
+        <h2 className="mt-3 max-w-4xl font-['Shrikhand'] text-4xl leading-none md:text-7xl">
+          What others say.
+        </h2>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <figure className="flex flex-col rounded-[2rem] border-2 border-slate-950 bg-white p-7 text-slate-950">
+            <blockquote className="text-lg font-bold leading-relaxed">
+              “James goes out of his way to look for our games and cover them. I
+              appreciate his continual willingness to be a part of what Capstone
+              does in media coverage.”
+            </blockquote>
+            <figcaption className="mt-8 border-t border-slate-200 pt-5 text-sm font-black uppercase tracking-wider text-purple-800">
+              Capstone Games
+            </figcaption>
+          </figure>
+          <figure className="flex flex-col rounded-[2rem] border-2 border-slate-950 bg-white p-7 text-slate-950">
+            <blockquote className="text-lg font-bold leading-relaxed">
+              “James presents each game in a way that helps viewers decide
+              whether it’s a good fit for their gaming preferences.”
+            </blockquote>
+            <figcaption className="mt-auto border-t border-slate-950/15 pt-5 text-sm font-black uppercase tracking-wider text-purple-800">
+              InsideUp Games
+            </figcaption>
+          </figure>
+          <figure className="flex flex-col rounded-[2rem] border-2 border-slate-950 bg-white p-7 text-slate-950">
+            <blockquote className="text-lg font-bold leading-relaxed">
+              “Amazing channel. James is a phenomenal person and does so much
+              for the community.”
+            </blockquote>
+            <figcaption className="mt-auto border-t border-slate-200 pt-5 text-sm font-black uppercase tracking-wider text-purple-800">
+              Richard “Rahdo” Ham
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 md:px-10 md:py-20 lg:px-16">
+        <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
           By platform
         </p>
         <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-8xl">
@@ -141,7 +223,6 @@ export function MediaPage() {
             >
               YouTube <ArrowRight className="size-5" />
             </a>
-            <p className="mt-2 text-sm text-slate-500">Latest 28 days</p>
             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
               <div>
                 <strong className="text-3xl font-black">17,995</strong>
@@ -174,9 +255,6 @@ export function MediaPage() {
             >
               Instagram <ArrowRight className="size-5" />
             </a>
-            <p className="mt-2 text-sm text-slate-500">
-              Latest account insights
-            </p>
             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
               <div>
                 <strong className="text-3xl font-black">21,266</strong>
@@ -209,9 +287,6 @@ export function MediaPage() {
             >
               BoardGameGeek <ArrowRight className="size-5" />
             </a>
-            <p className="mt-2 text-sm text-slate-500">
-              Lifetime community contribution
-            </p>
             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
               <div>
                 <strong className="text-3xl font-black">14,019</strong>
@@ -249,12 +324,6 @@ export function MediaPage() {
             >
               Twitch <ArrowRight className="size-5" />
             </a>
-            <p className="mt-2 text-sm text-slate-500">
-              Prime-time streams embedded directly on BoardGameGeek
-            </p>
-            <p className="mt-2 text-sm font-black text-purple-800">
-              Recent stream high · August 10
-            </p>
             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
               <div>
                 <strong className="text-3xl font-black">125</strong>

@@ -12,6 +12,24 @@ export function Layout() {
   useEffect(() => {
     setOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" });
+
+    const titles: Record<string, string> = {
+      "/": "Board Gaymes James",
+      "/consulting": "Consulting | Board Gaymes James",
+      "/media": "Media Kit | Board Gaymes James",
+      "/marty": "M.A.R.T.Y. Rating System | Board Gaymes James",
+      "/brain-geek-guide": "Brain Geek Guide | Board Gaymes James",
+    };
+    document.title =
+      titles[location.pathname] ?? "Page Not Found | Board Gaymes James";
+
+    const focusFrame = window.requestAnimationFrame(() => {
+      const heading = document.querySelector<HTMLElement>("main h1");
+      heading?.setAttribute("tabindex", "-1");
+      heading?.focus({ preventScroll: true });
+    });
+
+    return () => window.cancelAnimationFrame(focusFrame);
   }, [location.pathname]);
 
   return (
@@ -112,7 +130,7 @@ export function Layout() {
             BoardGameGeek
           </a>
         </div>
-        <p className="text-xs text-white/50 md:col-span-2">
+        <p className="text-xs text-white/70 md:col-span-2">
           © {new Date().getFullYear()} Board Gaymes James
         </p>
       </footer>

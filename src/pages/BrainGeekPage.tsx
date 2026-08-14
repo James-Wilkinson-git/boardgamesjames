@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
 
 const card =
   "flex min-h-72 flex-col rounded-3xl border border-white/20 bg-white/10 p-7";
@@ -6,20 +7,21 @@ const card =
 export function BrainGeekPage() {
   return (
     <article>
-      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-8 md:px-10 md:py-12 lg:min-h-[560px] lg:grid-cols-[1.2fr_.8fr] lg:gap-10 lg:px-16">
+      <header className={pageMasthead}>
         <div>
-          <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+          <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             A neurodivergent perspective on play
           </p>
           <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             Know what a game asks of your brain.
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
-            A shared language for what a game asks of your attention, memory,
-            social energy, agency, and emotions.
+            A neurodivergent guide to the demands behind play: what a game asks
+            you to read, remember, process socially, control, and navigate
+            emotionally before you bring it to the table.
           </p>
           <a
-            className="mt-8 inline-flex rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-white shadow-[5px_5px_0_#020617] transition-transform hover:-translate-y-1"
+            className="mt-8 inline-flex rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617] transition-transform hover:-translate-y-1"
             href="https://docs.google.com/spreadsheets/d/1-A44kuDjBlm82tE3a1LkeVIBXdMlxqM0rxa6pUdKCXY/edit?usp=sharing"
             target="_blank"
             rel="noreferrer"
@@ -28,23 +30,11 @@ export function BrainGeekPage() {
           </a>
         </div>
         <img
-          className="mx-auto max-h-60 w-full max-w-xs object-contain md:max-h-80 md:max-w-md lg:max-h-[360px] lg:max-w-none"
+          className={pageMastheadImage}
           src="/assets/brain-geek-guide.png"
           alt="Brain Geek Guide rainbow brain logo"
         />
       </header>
-      <section className="mx-auto max-w-4xl space-y-6 px-5 py-14 text-xl leading-relaxed md:px-10 md:py-20 md:text-2xl">
-        <p>
-          “How heavy is it?” is not always enough. Two games with similar
-          complexity ratings can feel completely different depending on what
-          your brain needs to track and how the people at the table interact.
-        </p>
-        <p>
-          The Brain Geek Guide describes those demands without declaring a game
-          universally safe, accessible, good, or bad. The goal is to give people
-          better information so they can decide what works for them.
-        </p>
-      </section>
       <section className="bg-slate-950 px-5 py-16 text-white md:px-10 md:py-20 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Five dimensions
@@ -53,9 +43,9 @@ export function BrainGeekPage() {
           Know what the table is asking.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
-          Each dimension uses plain-language descriptions rather than a score.
-          None of the endpoints is automatically better; they describe different
-          kinds of demand.
+          Complexity alone cannot describe how a game feels. Five plain-language
+          dimensions show its demands without declaring any experience
+          universally good or bad.
         </p>
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <article className={card}>
@@ -144,7 +134,16 @@ export function BrainGeekPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           The original guide
         </p>
-        <div className="mt-7 flex snap-x gap-5 overflow-x-auto pb-5">
+        <p id="brain-geek-gallery-help" className="sr-only">
+          Scroll horizontally to view all seven guide images.
+        </p>
+        <div
+          className="mt-7 flex snap-x gap-5 overflow-x-auto pb-5"
+          role="region"
+          aria-label="Brain Geek original guide gallery"
+          aria-describedby="brain-geek-gallery-help"
+          tabIndex={0}
+        >
           <img
             className="h-[390px] max-w-none rounded-2xl border-2 border-slate-950"
             src="/assets/brain-slides/slide1.jpg"
@@ -182,7 +181,7 @@ export function BrainGeekPage() {
           />
         </div>
       </section>
-      <section className="bg-pink-500 px-5 py-16 text-white md:px-10 md:py-20 lg:px-16">
+      <section className="bg-pink-500 px-5 py-16 text-slate-950 md:px-10 md:py-20 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
           How I score the whole experience
         </p>

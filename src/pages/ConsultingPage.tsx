@@ -1,11 +1,12 @@
 import { ArrowRight, Mail } from "lucide-react";
+import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
 
 export function ConsultingPage() {
   return (
     <article>
-      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-10 md:px-10 md:py-16 lg:min-h-[620px] lg:grid-cols-[1.2fr_.8fr] lg:gap-12 lg:px-16 lg:py-20">
+      <header className={pageMasthead}>
         <div>
-          <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+          <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             Board Game Development & Player Experience Consultant
           </p>
           <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
@@ -20,7 +21,7 @@ export function ConsultingPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <button
               type="button"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-white shadow-[5px_5px_0_#020617]"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617]"
               onClick={() =>
                 (window.location.href = [
                   "mai",
@@ -43,7 +44,7 @@ export function ConsultingPage() {
           </div>
         </div>
         <img
-          className="mx-auto max-h-72 w-full max-w-xs object-contain md:max-h-96 md:max-w-md lg:max-h-[500px] lg:max-w-none"
+          className={pageMastheadImage}
           src="/assets/bo-detective.png"
           alt="Bo dressed as a detective"
         />
@@ -79,7 +80,7 @@ export function ConsultingPage() {
               happen.
             </p>
             <div className="h-fit rounded-2xl bg-white/10 p-5">
-              <span className="block text-xs uppercase tracking-widest text-white/50">
+              <span className="block text-xs uppercase tracking-widest text-white/70">
                 Project range
               </span>
               <strong className="mt-2 block text-xl"></strong>
@@ -104,7 +105,7 @@ export function ConsultingPage() {
               communicate the game clearly.
             </p>
             <div className="h-fit rounded-2xl bg-white/10 p-5">
-              <span className="block text-xs uppercase tracking-widest text-white/50">
+              <span className="block text-xs uppercase tracking-widest text-white/70">
                 Project range
               </span>
               <strong className="mt-2 block text-xl"></strong>
@@ -126,7 +127,7 @@ export function ConsultingPage() {
               game is actually played.
             </p>
             <div className="h-fit rounded-2xl bg-white/10 p-5">
-              <span className="block text-xs uppercase tracking-widest text-white/50">
+              <span className="block text-xs uppercase tracking-widest text-white/70">
                 Project rate
               </span>
               <strong className="mt-2 block text-xl">Quoted by scope</strong>

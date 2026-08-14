@@ -10,7 +10,7 @@ export function NotFoundPage() {
         This page isn’t at the table.
       </h1>
       <Link
-        className="mx-auto rounded-full bg-pink-500 px-6 py-3 text-sm font-black text-white"
+        className="mx-auto rounded-full bg-pink-500 px-6 py-3 text-sm font-black text-slate-950"
         to="/"
       >
         Back home

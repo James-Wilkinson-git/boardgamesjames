@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
 
 const row =
   "grid gap-4 border-t border-white/20 py-9 md:grid-cols-[70px_1fr_120px] md:items-center";
@@ -7,20 +8,22 @@ const copy = "mt-4 max-w-3xl leading-relaxed text-white/65";
 export function MartyPage() {
   return (
     <article>
-      <header className="mx-auto grid max-w-screen-2xl items-center gap-6 px-5 py-8 md:px-10 md:py-10 lg:min-h-[620px] lg:grid-cols-[1.2fr_.8fr] lg:gap-12 lg:px-16">
+      <header className={pageMasthead}>
         <div>
-          <p className="text-xs font-black uppercase tracking-[.18em] text-purple-800">
+          <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             My board game rating system
           </p>
           <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             The <span className="text-pink-500">M.A.R.T.Y.</span> scale!
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
-            A five-category weighted system for evaluating games as fairly as
-            possible—and keeping one exciting play from doing all the talking.
+            A transparent five-category system that separates mechanics,
+            approachability, replayability, theme and art, and the desire to
+            play again—then weights each part to produce a more considered final
+            rating.
           </p>
           <a
-            className="mt-8 inline-flex rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-white shadow-[5px_5px_0_#020617] transition-transform hover:-translate-y-1"
+            className="mt-8 inline-flex rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617] transition-transform hover:-translate-y-1"
             href="https://docs.google.com/spreadsheets/d/1-A44kuDjBlm82tE3a1LkeVIBXdMlxqM0rxa6pUdKCXY/edit?usp=sharing"
             target="_blank"
             rel="noreferrer"
@@ -29,24 +32,11 @@ export function MartyPage() {
           </a>
         </div>
         <img
-          className="mx-auto max-h-72 w-full max-w-xs object-contain md:max-h-96 md:max-w-md lg:max-h-[500px] lg:max-w-none"
+          className={pageMastheadImage}
           src="/assets/bo-cowboy.png"
           alt="Bo dressed as a cowboy"
         />
       </header>
-      <section className="mx-auto max-w-4xl space-y-5 px-5 py-10 text-xl leading-relaxed">
-        <p>
-          A single number can hide a lot. A game might be mechanically brilliant
-          but difficult to teach. It might look incredible but feel the same
-          every time. M.A.R.T.Y. makes those differences visible before
-          combining them.
-        </p>
-        <p>
-          The system scores five distinct parts of the experience from 1 to 10.
-          Each category then contributes according to its weight, producing a
-          final rating that reflects what matters most in my reviews.
-        </p>
-      </section>
       <section className="bg-slate-950 px-5 py-20 text-white md:px-10 md:py-28 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
           The five categories
@@ -54,6 +44,10 @@ export function MartyPage() {
         <h2 className="mt-3 font-['Shrikhand'] text-4xl md:text-8xl">
           What goes into the number.
         </h2>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
+          Five distinct scores show where a game shines—and where it asks more
+          of players—before combining into one weighted rating.
+        </p>
         <div className="mt-14">
           <article className={row}>
             <span className="text-2xl font-black text-teal-300">01</span>
@@ -165,7 +159,16 @@ export function MartyPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           The original guide
         </p>
-        <div className="mt-7 flex snap-x gap-5 overflow-x-auto pb-5">
+        <p id="marty-gallery-help" className="sr-only">
+          Scroll horizontally to view all six guide images.
+        </p>
+        <div
+          className="mt-7 flex snap-x gap-5 overflow-x-auto pb-5"
+          role="region"
+          aria-label="M.A.R.T.Y. original guide gallery"
+          aria-describedby="marty-gallery-help"
+          tabIndex={0}
+        >
           <img
             className="h-[520px] max-w-none rounded-2xl border-2 border-slate-950"
             src="/assets/marty-slides/slide2.jpg"
@@ -198,7 +201,7 @@ export function MartyPage() {
           />
         </div>
       </section>
-      <section className="bg-pink-500 px-5 py-20 text-white md:px-10 md:py-28 lg:px-16">
+      <section className="bg-pink-500 px-5 py-20 text-slate-950 md:px-10 md:py-28 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Another way to understand a game
         </p>
