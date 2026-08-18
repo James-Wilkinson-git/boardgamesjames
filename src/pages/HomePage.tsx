@@ -1,189 +1,182 @@
-import { ArrowRight, BarChart3, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
-import { pageMasthead } from "../components/pageStyles";
+import { Tagline } from "../components/Tagline";
+import { mediaMetrics, platforms } from "../data/brand";
+import { trackEvent } from "../lib/analytics";
 
 const button =
-  "inline-flex items-center gap-2 rounded-full border-2 border-slate-950 px-6 py-3 text-sm font-black transition-transform hover:-translate-y-1";
+  "inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-sm font-black transition-transform hover:-translate-y-1";
 
 export function HomePage() {
   return (
     <>
-      <section className={pageMasthead}>
-        <div>
-          <p className="text-xs font-black uppercase tracking-[.18em]">
-            Queer · Autistic · Euro-gamer
-          </p>
-          <h1 className="mt-4 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-8xl md:leading-[.82]">
-            Board games
-            <br />
-            <span className="text-pink-500">
-              through a queer & autistic lens.
-            </span>
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-700 md:text-xl">
-            I’m James: board game content creator, and industry consultant. I
-            make complicated games easier to understand—and the hobby more
-            welcoming while I’m at it.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              className={`${button} bg-pink-500 text-slate-950 shadow-[5px_5px_0_#020617]`}
-              to="/media"
-            >
-              <BarChart3 className="size-4" /> View media kit
-            </Link>
-            <Link className={`${button} bg-white`} to="/consulting">
-              Work with me <ArrowRight className="size-4" />
-            </Link>
+      <section className="bg-purple-800 text-white">
+        <div className="content-shell py-10 md:py-14 lg:py-16">
+          <div className="max-w-4xl">
+            <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
+              Board game media & consulting
+            </p>
+            <h1 className="sr-only">Board Gaymes James</h1>
+            <img
+              className="mt-4 h-auto w-64 sm:w-72 md:w-80 lg:w-96"
+              src="/assets/bgj-cream.svg"
+              alt="Board Gaymes James"
+            />
+            <Tagline compact className="mt-4 text-yellow-300" />
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+              Board game creator and consultant bringing real play, independent
+              analysis, and accessibility expertise to the tabletop industry.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                className={`${button} border-white bg-yellow-300 text-slate-950 shadow-[5px_5px_0_#fffaf0]`}
+                to="/media"
+                onClick={() => trackEvent("media_kit_visit", "homepage_hero")}
+              >
+                Media Kit <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                className={`${button} border-white text-white`}
+                to="/consulting"
+                onClick={() => trackEvent("consulting_visit", "homepage_hero")}
+              >
+                Consulting <ArrowRight className="size-4" />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="relative mx-auto grid w-full max-w-xs place-items-start md:max-w-md lg:max-w-none">
-          <img
-            className="max-h-72 w-full object-contain md:max-h-96 lg:max-h-[460px]"
-            src="/assets/bo-board-games.png"
-            alt="Bo, the Board Gaymes James cartoon mascot, sitting with colourful dice"
-          />
+      </section>
+
+      <section className="bg-yellow-300 py-10">
+        <div className="content-shell grid gap-8 sm:grid-cols-3">
+          <div>
+            <strong className="font-display text-5xl">
+              {mediaMetrics.youtube.impressions}
+            </strong>
+            <p className="mt-1 text-sm font-bold">
+              YouTube impressions · latest 28 days
+            </p>
+          </div>
+          <div>
+            <strong className="font-display text-5xl">
+              {mediaMetrics.instagram.views}
+            </strong>
+            <p className="mt-1 text-sm font-bold">
+              Instagram views · latest insights
+            </p>
+          </div>
+          <div>
+            <strong className="font-display text-5xl">
+              {mediaMetrics.boardGameGeek.thumbs}
+            </strong>
+            <p className="mt-1 text-sm font-bold">BoardGameGeek thumbs</p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-slate-950 px-5 py-20 text-white md:px-10 md:py-28 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em]">
-          What you’ll find here
-        </p>
-        <h2 className="mt-4 max-w-5xl font-['Shrikhand'] text-4xl leading-none md:text-6xl">
-          Reviews, guides, and industry help from my side of the table.
-        </h2>
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          <Link
-            className="flex flex-col rounded-[2rem] bg-teal-300 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
-            to="/marty"
-          >
-            <img
-              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
-              src="/assets/bo-tabletop.png"
-              alt="Bo considering a board game at the table"
-            />
-            <p className="text-xs font-black uppercase tracking-widest">
-              Rating games
-            </p>
-            <h3 className="mt-3 text-3xl font-black md:text-4xl">
-              Meet M.A.R.T.Y.
-            </h3>
-            <p className="mt-5 leading-relaxed">
-              My weighted system for turning five parts of a play experience
-              into a fairer score.
-            </p>
-          </Link>
-          <Link
-            className="flex flex-col rounded-[2rem] bg-violet-300 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
-            to="/brain-geek-guide"
-          >
-            <img
-              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
-              src="assets/brain-geek-guide.png"
-              alt="Bo riding a rocket"
-            />
-            <p className="text-xs font-black uppercase tracking-widest">
-              Knowing your needs
-            </p>
-            <h3 className="mt-3 text-3xl font-black md:text-4xl">
-              Brain Geek Guide
-            </h3>
-            <p className="mt-5 leading-relaxed">
-              A neurodivergent lens for understanding what it's like to play a
-              game as a neurodivergent
-            </p>
-          </Link>
-          <Link
-            className="flex flex-col rounded-[2rem] bg-orange-400 p-7 text-slate-950 transition-transform hover:-translate-y-2 lg:min-h-80"
-            to="/consulting"
-          >
-            <img
-              className="mb-6 h-52 w-full shrink-0 object-contain lg:mb-8 lg:h-48"
-              src="/assets/bo-rocket.png"
-              alt="Bo riding a rocket"
-            />
-            <p className="text-xs font-black uppercase tracking-widest">
-              Industry work
-            </p>
-            <h3 className="mt-3 text-3xl font-black md:text-4xl">
-              Development & Player Experience
-            </h3>
-            <p className="mt-5 leading-relaxed">
-              Rulebook development, blind playtesting, usability, and
-              accessibility reviews for games in development.
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      <section className="px-5 py-20 md:px-10 md:py-28 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em]">
-          Around the table
-        </p>
-        <h2 className="mt-3 text-4xl font-black tracking-tight md:text-7xl">
-          Follow me wherever you play.
-        </h2>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          <a
-            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-yellow-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
-            href="https://www.youtube.com/@BoardGaymesJames"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>YouTube</span>
-            <ExternalLink aria-hidden="true" />
-          </a>
-          <a
-            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-pink-500 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
-            href="https://www.instagram.com/boardgaymesjames/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>Instagram</span>
-            <ExternalLink aria-hidden="true" />
-          </a>
-          <a
-            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-violet-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
-            href="https://www.twitch.tv/boardgaymesjames"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>Twitch</span>
-            <ExternalLink aria-hidden="true" />
-          </a>
-          <a
-            className="flex items-center justify-between rounded-[2rem] border-2 border-slate-950 bg-teal-300 p-7 text-2xl font-black transition-transform hover:-translate-y-1 md:p-9 md:text-4xl"
-            href="https://boardgamegeek.com/user/BoardGaymesJames"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>BoardGameGeek</span>
-            <ExternalLink aria-hidden="true" />
-          </a>
-        </div>
-      </section>
-
-      <section className="grid gap-10 bg-pink-500 px-5 py-20 text-slate-950 md:px-10 md:py-28 lg:grid-cols-2 lg:px-16">
-        <div>
+      <section className="py-16 md:py-20">
+        <div className="content-shell">
           <p className="text-xs font-black uppercase tracking-[.18em]">
-            For publishers & partners
+            Two professional paths
           </p>
-          <h2 className="mt-3 text-4xl font-black leading-none tracking-tight md:text-7xl">
-            The numbers are live. The perspective is mine.
+          <h2 className="mt-3 max-w-5xl text-5xl leading-none text-purple-800 md:text-7xl">
+            Media that shows the table. Consulting that improves it.
           </h2>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <article className="flex flex-col bg-teal-300 p-7 md:p-10">
+              <p className="text-xs font-black uppercase tracking-[.18em]">
+                Media & creator work
+              </p>
+              <h3 className="mt-3 text-4xl font-bold">
+                Real games, played and examined.
+              </h3>
+              <p className="mt-5 max-w-xl leading-relaxed">
+                Live teach-and-play streams, independent written reviews, visual
+                Instagram coverage, and convention reporting for players
+                actively researching games.
+              </p>
+              <Link
+                className={`${button} mt-8 w-fit border-slate-950 bg-white`}
+                to="/media"
+              >
+                Explore the Media Kit <ArrowRight className="size-4" />
+              </Link>
+            </article>
+            <article className="flex flex-col bg-pink-500 p-7 md:p-10">
+              <p className="text-xs font-black uppercase tracking-[.18em]">
+                Consulting
+              </p>
+              <h3 className="mt-3 text-4xl font-bold">
+                Find the friction before players do.
+              </h3>
+              <p className="mt-5 max-w-xl leading-relaxed">
+                Blind rulebook playtests, rulebook review and development, and
+                player aids shaped around clarity, accessibility, usability, and
+                player experience.
+              </p>
+              <Link
+                className={`${button} mt-8 w-fit border-slate-950 bg-white`}
+                to="/consulting"
+              >
+                View consulting services <ArrowRight className="size-4" />
+              </Link>
+            </article>
+          </div>
         </div>
-        <div className="max-w-lg self-end text-lg leading-relaxed">
-          <p>
-            Audience insights, current reach, past work, and the information you
-            need to see if we’re a fit.
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white md:py-20">
+        <div className="content-shell">
+          <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
+            Find the work
           </p>
-          <Link
-            className={`${button} mt-8 border-white bg-white text-slate-950`}
-            to="/media"
-          >
-            Open my media kit <ArrowRight className="size-4" />
-          </Link>
+          <h2 className="mt-3 text-5xl leading-none md:text-7xl">
+            Choose the platform for the experience.
+          </h2>
+          <div className="mt-10 grid gap-px border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
+            {Object.entries(platforms).map(([key, platform]) => (
+              <a
+                key={platform.name}
+                className="group bg-slate-950 p-6 transition-colors hover:bg-purple-800"
+                href={platform.href}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackEvent("platform_outbound", key)}
+              >
+                <span className="flex items-center justify-between text-sm font-bold text-white/60">
+                  {platform.name} <ExternalLink className="size-4" />
+                </span>
+                <strong className="mt-8 block font-editorial text-2xl">
+                  {platform.action}
+                </strong>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-pink-500 py-14">
+        <div className="content-shell grid gap-8 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[.18em]">
+              The analytical difference
+            </p>
+            <h2 className="mt-3 text-5xl leading-none md:text-7xl">
+              Beyond a single score.
+            </h2>
+          </div>
+          <div className="max-w-xl self-end leading-relaxed">
+            <p>
+              M.A.R.T.Y. makes review priorities transparent. The Brain Geek
+              Guide looks beyond complexity scores to the mental demands
+              involved in learning, processing, and playing.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-5 font-bold">
+              <Link to="/marty">Explore M.A.R.T.Y. →</Link>
+              <Link to="/brain-geek-guide">Explore Brain Geek →</Link>
+              <Link to="/about">About James →</Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

@@ -7,12 +7,12 @@ const card =
 export function BrainGeekPage() {
   return (
     <article>
-      <header className={pageMasthead}>
+      <header className={`${pageMasthead} lg:grid-cols-[1.2fr_.8fr]`}>
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             A neurodivergent perspective on play
           </p>
-          <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
+          <h1 className="mt-5 font-display text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             Know what a game asks of your brain.
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
@@ -39,7 +39,7 @@ export function BrainGeekPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Five dimensions
         </p>
-        <h2 className="mt-3 font-['Shrikhand'] text-4xl md:text-8xl">
+        <h2 className="mt-3 font-display text-4xl md:text-8xl">
           Know what the table is asking.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
@@ -112,7 +112,7 @@ export function BrainGeekPage() {
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Information, not opinion
           </p>
-          <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+          <h2 className="mt-3 font-display text-4xl leading-none md:text-8xl">
             Your needs are the point.
           </h2>
         </div>
@@ -185,7 +185,7 @@ export function BrainGeekPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           How I score the whole experience
         </p>
-        <h2 className="my-6 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+        <h2 className="my-6 font-display text-4xl leading-none md:text-8xl">
           Meet M.A.R.T.Y.
         </h2>
         <Link

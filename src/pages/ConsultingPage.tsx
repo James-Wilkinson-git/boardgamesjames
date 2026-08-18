@@ -1,5 +1,6 @@
 import { ArrowRight, Mail } from "lucide-react";
-import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
+import { pageMasthead } from "../components/pageStyles";
+import { trackEvent } from "../lib/analytics";
 
 export function ConsultingPage() {
   return (
@@ -9,7 +10,7 @@ export function ConsultingPage() {
           <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             Board Game Development & Player Experience Consultant
           </p>
-          <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
+          <h1 className="mt-5 font-display text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             See what happens when real players open your rulebook.
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
@@ -22,18 +23,19 @@ export function ConsultingPage() {
             <button
               type="button"
               className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617]"
-              onClick={() =>
-                (window.location.href = [
+              onClick={() => {
+                trackEvent("contact_click", "consulting_hero");
+                window.location.href = [
                   "mai",
                   "lto:",
                   "hi",
                   "@",
                   "boardgaymesjames.com",
                   "?subject=Board%20game%20consulting%20inquiry",
-                ].join(""))
-              }
+                ].join("");
+              }}
             >
-              <Mail className="size-4" /> Discuss your game
+              <Mail className="size-4" /> Discuss a Project
             </button>
             <a
               className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-white px-6 py-3 text-sm font-black"
@@ -43,11 +45,6 @@ export function ConsultingPage() {
             </a>
           </div>
         </div>
-        <img
-          className={pageMastheadImage}
-          src="/assets/bo-detective.png"
-          alt="Bo dressed as a detective"
-        />
       </header>
 
       <section
@@ -57,7 +54,7 @@ export function ConsultingPage() {
         <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
           Professional services
         </p>
-        <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+        <h2 className="mt-3 font-display text-4xl leading-none md:text-8xl">
           Improve the product before it reaches players.
         </h2>
 
@@ -83,7 +80,7 @@ export function ConsultingPage() {
               <span className="block text-xs uppercase tracking-widest text-white/70">
                 Project range
               </span>
-              <strong className="mt-2 block text-xl"></strong>
+              <strong className="mt-2 block text-xl">Quoted by scope</strong>
             </div>
           </article>
 
@@ -108,7 +105,7 @@ export function ConsultingPage() {
               <span className="block text-xs uppercase tracking-widest text-white/70">
                 Project range
               </span>
-              <strong className="mt-2 block text-xl"></strong>
+              <strong className="mt-2 block text-xl">Quoted by scope</strong>
             </div>
           </article>
 
@@ -142,7 +139,7 @@ export function ConsultingPage() {
             <p className="text-xs font-black uppercase tracking-[.18em] ">
               Selected work
             </p>
-            <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none text-purple-800 md:text-8xl">
+            <h2 className="mt-3 font-display text-4xl leading-none text-purple-800 md:text-8xl">
               Player aids built for the table.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-700">
@@ -168,6 +165,9 @@ export function ConsultingPage() {
                 href="https://boardgamegeek.com/boardgame/429405/orloj-the-prague-astronomical-clock/files"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackEvent("media_example_click", "orloj_player_aid")
+                }
               >
                 View Orloj files on BGG <ArrowRight className="size-4" />
               </a>
@@ -196,24 +196,25 @@ export function ConsultingPage() {
         <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
           Have a game in development?
         </p>
-        <h2 className="my-6 max-w-5xl font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+        <h2 className="my-6 max-w-5xl font-display text-4xl leading-none md:text-8xl">
           Let me show you where players get stuck.
         </h2>
         <button
           type="button"
           className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950"
-          onClick={() =>
-            (window.location.href = [
+          onClick={() => {
+            trackEvent("contact_click", "consulting_footer");
+            window.location.href = [
               "mai",
               "lto:",
               "hi",
               "@",
               "boardgaymesjames.com",
               "?subject=Board%20game%20consulting%20inquiry",
-            ].join(""))
-          }
+            ].join("");
+          }}
         >
-          Start a conversation <ArrowRight className="size-4" />
+          Discuss a Project <ArrowRight className="size-4" />
         </button>
       </section>
     </article>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { pageMasthead, pageMastheadImage } from "../components/pageStyles";
+import { pageMasthead } from "../components/pageStyles";
 
 const row =
   "grid gap-4 border-t border-white/20 py-9 md:grid-cols-[70px_1fr_120px] md:items-center";
@@ -13,7 +13,7 @@ export function MartyPage() {
           <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
             My board game rating system
           </p>
-          <h1 className="mt-5 font-['Shrikhand'] text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
+          <h1 className="mt-5 font-display text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
             The <span className="text-pink-500">M.A.R.T.Y.</span> scale!
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
@@ -31,17 +31,12 @@ export function MartyPage() {
             See all games rated so far
           </a>
         </div>
-        <img
-          className={pageMastheadImage}
-          src="/assets/bo-cowboy.png"
-          alt="Bo dressed as a cowboy"
-        />
       </header>
       <section className="bg-slate-950 px-5 py-20 text-white md:px-10 md:py-28 lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
           The five categories
         </p>
-        <h2 className="mt-3 font-['Shrikhand'] text-4xl md:text-8xl">
+        <h2 className="mt-3 font-display text-4xl md:text-8xl">
           What goes into the number.
         </h2>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/65">
@@ -137,7 +132,7 @@ export function MartyPage() {
           <p className="text-xs font-black uppercase tracking-[.18em]">
             Why weighted?
           </p>
-          <h2 className="mt-3 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+          <h2 className="mt-3 font-display text-4xl leading-none md:text-8xl">
             Less hype. More signal.
           </h2>
         </div>
@@ -205,7 +200,7 @@ export function MartyPage() {
         <p className="text-xs font-black uppercase tracking-[.18em]">
           Another way to understand a game
         </p>
-        <h2 className="my-6 font-['Shrikhand'] text-4xl leading-none md:text-8xl">
+        <h2 className="my-6 font-display text-4xl leading-none md:text-8xl">
           Now meet the Brain Geek Guide.
         </h2>
         <Link
