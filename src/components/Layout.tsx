@@ -123,6 +123,12 @@ export function Layout() {
             >
               Consulting
             </NavLink>
+            <NavLink className={linkClass} to="/marty">
+              M.A.R.T.Y.
+            </NavLink>
+            <NavLink className={linkClass} to="/brain-geek-guide">
+              Brain Geek Guide
+            </NavLink>
             <NavLink className={linkClass} to="/about">
               About
             </NavLink>

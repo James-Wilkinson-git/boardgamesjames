@@ -58,14 +58,14 @@ export function MartyPage() {
               </p>
             </div>
             <strong className="text-5xl font-black text-yellow-300 md:text-right">
-              50%
+              48%
             </strong>
           </article>
           <article className={row}>
             <span className="text-2xl font-black text-teal-300">02</span>
             <div>
               <p className="text-xs font-black uppercase tracking-widest">
-                Is it easy to teach and play?
+                Is it easy to teach or learn and play?
               </p>
               <h3 className="mt-2 text-4xl font-black">Approachability</h3>
               <p className={copy}>
@@ -74,7 +74,7 @@ export function MartyPage() {
               </p>
             </div>
             <strong className="text-5xl font-black text-yellow-300 md:text-right">
-              10%
+              15%
             </strong>
           </article>
           <article className={row}>
@@ -106,7 +106,7 @@ export function MartyPage() {
               </p>
             </div>
             <strong className="text-5xl font-black text-yellow-300 md:text-right">
-              30%
+              31%
             </strong>
           </article>
           <article className={row}>
@@ -122,7 +122,7 @@ export function MartyPage() {
               </p>
             </div>
             <strong className="text-5xl font-black text-yellow-300 md:text-right">
-              5%
+              1%
             </strong>
           </article>
         </div>
