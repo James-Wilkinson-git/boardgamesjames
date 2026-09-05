@@ -77,14 +77,12 @@ export function MediaPage() {
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <article className="rounded-[2rem] bg-yellow-300 p-8 text-slate-950 md:p-10">
             <p className="text-xs font-black uppercase tracking-[.18em]">
-              YouTube video impressions
+              YouTube Views
             </p>
             <strong className="mt-5 block font-display text-8xl leading-none md:text-9xl">
-              {mediaMetrics.youtube.impressions}
+              {mediaMetrics.youtube.views}
             </strong>
-            <p className="mt-5 font-bold">
-              Latest 28 days · {mediaMetrics.youtube.impressionsGrowth} growth
-            </p>
+            <p className="mt-5 font-bold">August 2026</p>
           </article>
           <div className="grid gap-5 sm:grid-cols-2">
             <article className="rounded-[2rem] bg-pink-500 p-7 text-slate-950">
@@ -94,16 +92,16 @@ export function MediaPage() {
               <strong className="mt-5 block font-display text-6xl leading-none md:text-7xl">
                 {mediaMetrics.instagram.views}
               </strong>
-              <p className="mt-4 text-sm font-bold">Latest account insights</p>
+              <p className="mt-4 text-sm font-bold">August 2026</p>
             </article>
             <article className="rounded-[2rem] bg-orange-400 p-7 text-slate-950">
               <p className="text-xs font-black uppercase tracking-[.18em]">
-                YouTube views
+                Twitch Followers
               </p>
               <strong className="mt-5 block font-display text-6xl leading-none md:text-7xl">
-                {mediaMetrics.youtube.views}
+                {mediaMetrics.twitch.followers}
               </strong>
-              <p className="mt-4 text-sm font-bold">Latest 28 days</p>
+              <p className="mt-4 text-sm font-bold">August 2026</p>
             </article>
           </div>
         </div>
@@ -305,18 +303,6 @@ export function MediaPage() {
                 </strong>
                 <p className="text-sm text-slate-500">Watch hours</p>
               </div>
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.youtube.ctr}
-                </strong>
-                <p className="text-sm text-slate-500">Impression CTR</p>
-              </div>
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.youtube.averageViewDuration}
-                </strong>
-                <p className="text-sm text-slate-500">Average view duration</p>
-              </div>
             </div>
             <p className="mt-7 border-t border-slate-200 pt-5 font-black">
               {mediaMetrics.youtube.subscribers} subscribers
@@ -402,11 +388,11 @@ export function MediaPage() {
             </div>
             <a
               className="mt-7 inline-flex rounded-full border-2 border-slate-950 bg-yellow-300 px-4 py-2 text-sm font-black"
-              href="https://boardgamegeek.com/files/boardgame/all?username=BoardGaymesJames"
+              href="https://boardgamegeek.com/threads/user/484692?forumname=reviews&parenttype=boardgame&sort=recent"
               target="_blank"
               rel="noreferrer"
             >
-              Browse my BGG files
+              Written Reviews
             </a>
           </article>
 
@@ -420,32 +406,7 @@ export function MediaPage() {
             >
               Twitch <ArrowRight className="size-5" />
             </a>
-            <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.twitch.liveViews}
-                </strong>
-                <p className="text-sm text-slate-500">Live views</p>
-              </div>
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.twitch.uniqueViewers}
-                </strong>
-                <p className="text-sm text-slate-500">Unique viewers</p>
-              </div>
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.twitch.peakViewers}
-                </strong>
-                <p className="text-sm text-slate-500">Peak viewers</p>
-              </div>
-              <div>
-                <strong className="text-3xl font-black">
-                  {mediaMetrics.twitch.averageViewers}
-                </strong>
-                <p className="text-sm text-slate-500">Average viewers</p>
-              </div>
-            </div>
+
             <p className="mt-7 border-t border-slate-200 pt-5 font-black">
               {mediaMetrics.twitch.followers} followers
             </p>
