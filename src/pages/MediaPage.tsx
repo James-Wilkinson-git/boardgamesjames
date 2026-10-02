@@ -1,4 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { pageMasthead } from "../components/pageStyles";
 import { Tagline } from "../components/Tagline";
 import { mediaMetrics } from "../data/brand";
@@ -10,35 +11,39 @@ export function MediaPage() {
       <header className={pageMasthead}>
         <div>
           <p className="text-xs font-black uppercase tracking-[.18em] text-slate-950">
-            Media kit · {mediaMetrics.period}
+            Publisher partnerships · Media kit · {mediaMetrics.period}
           </p>
           <h1 className="mt-5 font-display text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
-            Real games. Independent opinions. Useful analysis.
+            High-quality streams. Polished video. Independent opinions.
           </h1>
           <Tagline className="mt-5 text-pink-500" />
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
-            Board Gaymes James brings a queer, autistic, Euro-gamer perspective
-            to reviews, live playthroughs, convention coverage, and practical
-            guides for an engaged tabletop audience. Live streams are also
-            embedded on BoardGameGeek during prime viewing times.
+            Board Gaymes James creates carefully produced live teach-and-plays
+            and YouTube coverage that let players see how a game works at the
+            table. Reviews and analysis bring a queer, autistic, Euro-gamer
+            perspective to the details that help people decide what to play.
+            Scheduled streams are also embedded on BoardGameGeek during prime
+            viewing times.
           </p>
-          <button
-            type="button"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617]"
-            onClick={() => {
-              trackEvent("contact_click", "media_hero");
-              window.location.href = [
-                "mai",
-                "lto:",
-                "hi",
-                "@",
-                "boardgaymesjames.com",
-                "?subject=Media%20partnership%20inquiry",
-              ].join("");
-            }}
-          >
-            <Mail className="size-4" /> Discuss a partnership
-          </button>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-pink-500 px-6 py-3 text-sm font-black text-slate-950 shadow-[5px_5px_0_#020617]"
+              to="/contact"
+              onClick={() => trackEvent("contact_click", "media_hero")}
+            >
+              <Mail className="size-4" /> Publisher inquiries
+            </Link>
+            <a
+              className="inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-white px-6 py-3 text-sm font-black text-slate-950"
+              href="#work"
+            >
+              See the coverage <ArrowRight className="size-4" />
+            </a>
+          </div>
+          <p className="mt-6 text-sm font-bold text-slate-700">
+            {mediaMetrics.youtube.subscribers} YouTube subscribers · Live
+            streams embedded on BoardGameGeek · Independent editorial coverage
+          </p>
         </div>
       </header>
 
@@ -109,17 +114,18 @@ export function MediaPage() {
 
       <section className="grid gap-8 bg-yellow-300 px-5 py-12 md:px-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center lg:px-16">
         <p className="text-xs font-black uppercase tracking-[.18em]">
-          A direct line to board gamers
+          Where players discover games
         </p>
         <div>
           <h2 className="font-display text-4xl leading-none md:text-7xl">
             Live on Twitch. Embedded on BoardGameGeek.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed">
-            My scheduled streams are embedded on BoardGameGeek during prime
-            viewing times. That puts each featured game in front of viewers on
-            my live channel and inside the world’s largest dedicated board-game
-            community while they are actively discovering and researching games.
+            Scheduled streams are embedded on BoardGameGeek during prime
+            viewing times, bringing a live teach-and-play into a place where
+            players are already researching games. The stream recording can
+            also keep working as an on-demand YouTube video after the live
+            event.
           </p>
         </div>
       </section>
@@ -148,45 +154,87 @@ export function MediaPage() {
         </div>
       </section>
 
-      <section className="px-5 py-16 md:px-10 md:py-20 lg:px-16">
+      <section
+        id="work"
+        className="scroll-mt-8 px-5 py-16 md:px-10 md:py-20 lg:px-16"
+      >
         <p className="text-xs font-black uppercase tracking-[.18em]">
-          Content formats
+          Publisher coverage
         </p>
         <h2 className="mt-3 max-w-5xl text-5xl leading-none text-purple-800 md:text-7xl">
-          The right format for each kind of coverage.
+          Show players what the game is like to play.
         </h2>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700">
+          A game can be explored through live play, a polished video that
+          remains available afterward, and written or visual analysis. The
+          right mix depends on the game and the project.
+        </p>
         <div className="mt-10 grid gap-px border-2 border-slate-950 bg-slate-950 sm:grid-cols-2">
           <article className="bg-amber-50 p-7">
             <h3 className="text-3xl font-black">Live teach & play</h3>
             <p className="mt-4 leading-relaxed">
-              James teaches a modern board game and then plays it live on Twitch
-              and YouTube, keeping the real learning and table experience
-              visible.
+              Players see the rules taught, decisions made, and table
+              experience unfold in a carefully produced stream on Twitch and
+              YouTube. Scheduled streams can also be embedded on BoardGameGeek.
             </p>
+            <a
+              className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
+              href="https://www.twitch.tv/boardgaymesjames"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("platform_outbound", "media_live_sample")}
+            >
+              Watch live coverage <ArrowRight className="size-4" />
+            </a>
           </article>
           <article className="bg-amber-50 p-7">
-            <h3 className="text-3xl font-black">Editorial reviews</h3>
+            <h3 className="text-3xl font-black">YouTube uploads</h3>
             <p className="mt-4 leading-relaxed">
-              Detailed, independent written reviews published primarily on
-              BoardGameGeek.
+              Polished video coverage gives viewers an accessible way to
+              revisit the game, see its components and decisions, and share
+              the experience after the live broadcast.
             </p>
+            <a
+              className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
+              href="https://www.youtube.com/@BoardGaymesJames"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("platform_outbound", "media_video_sample")}
+            >
+              Watch YouTube videos <ArrowRight className="size-4" />
+            </a>
           </article>
           <article className="bg-amber-50 p-7">
-            <h3 className="text-3xl font-black">Instagram review coverage</h3>
+            <h3 className="text-3xl font-black">Independent reviews</h3>
             <p className="mt-4 leading-relaxed">
-              Condensed visual coverage derived from full reviews, including
-              Quick Rating, M.A.R.T.Y., and Brain Geek Guide elements where
-              relevant.
+              Detailed written reviews help players understand who may enjoy a
+              game, how it feels to learn, and what stands out during play.
             </p>
+            <a
+              className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
+              href="https://boardgamegeek.com/threads/user/484692?forumname=reviews&parenttype=boardgame&sort=recent"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("platform_outbound", "media_review_sample")}
+            >
+              Read reviews on BoardGameGeek <ArrowRight className="size-4" />
+            </a>
           </article>
           <article className="bg-amber-50 p-7">
-            <h3 className="text-3xl font-black">
-              Convention & industry coverage
-            </h3>
+            <h3 className="text-3xl font-black">Social & event coverage</h3>
             <p className="mt-4 leading-relaxed">
-              Event reporting, interviews, previews, and pre-release or
-              crowdfunding coverage when the project is a fit.
+              Visual review coverage, interviews, convention reporting, and
+              previews extend a project’s presence when the format is a fit.
             </p>
+            <a
+              className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
+              href="https://www.instagram.com/boardgaymesjames/"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackEvent("platform_outbound", "media_social_sample")}
+            >
+              See Instagram coverage <ArrowRight className="size-4" />
+            </a>
           </article>
         </div>
       </section>
@@ -422,31 +470,23 @@ export function MediaPage() {
           Put your game in front of a thoughtful tabletop audience.
         </h2>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed">
-          Available for review coverage, live playthroughs, previews, convention
-          coverage, interviews, and clearly disclosed sponsored content.
+          Publishers are welcome to get in touch about review copies, live
+          teach-and-plays, YouTube coverage, previews, convention coverage,
+          interviews, and clearly disclosed sponsored content. Share the game,
+          timing, and the kind of coverage you have in mind.
         </p>
         <p className="mt-5 max-w-3xl border-l-4 border-slate-950 pl-5 font-bold leading-relaxed">
           Editorial review coverage and paid commissioned work are separate.
           Publishers cannot purchase a positive review, and receiving a review
           copy does not guarantee positive coverage.
         </p>
-        <button
-          type="button"
+        <Link
           className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-slate-950 bg-white px-6 py-3 text-sm font-black shadow-[5px_5px_0_#020617]"
-          onClick={() => {
-            trackEvent("contact_click", "media_footer");
-            window.location.href = [
-              "mai",
-              "lto:",
-              "hi",
-              "@",
-              "boardgaymesjames.com",
-              "?subject=Media%20partnership%20inquiry",
-            ].join("");
-          }}
+          to="/contact"
+          onClick={() => trackEvent("contact_click", "media_footer")}
         >
-          Start a partnership conversation <ArrowRight className="size-4" />
-        </button>
+          Send a publisher inquiry <ArrowRight className="size-4" />
+        </Link>
       </section>
     </article>
   );
