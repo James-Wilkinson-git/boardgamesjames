@@ -22,26 +22,26 @@ export const platforms = {
 } as const;
 
 export const mediaMetrics = {
-  period: "September 2026",
+  period: "October 2026",
   youtube: {
-    impressions: "138.2K",
+    impressions: "93.9K",
     impressionsGrowth: "32%",
-    views: "33.1k",
+    views: "13,504",
     watchHours: "645",
-    subscribers: "3,871",
+    subscribers: "3,918",
   },
   instagram: {
-    views: "7,750",
-    viewers: "2242",
-    interactions: "322",
-    nonFollowerViews: "38.5%",
+    views: "9,885",
+    viewers: "4,126",
+    interactions: "354",
+    nonFollowerViews: "26.3%",
     followers: "2,048",
   },
   boardGameGeek: {
-    thumbs: "14,821",
-    geekGold: "13,133",
-    geekListThumbs: "3,599",
-    videoThumbs: "1,229",
+    thumbs: "14.926",
+    geekGold: "13,141",
+    geekListThumbs: "1,078",
+    videoThumbs: "1,243",
   },
   twitch: {
     followers: "686",
