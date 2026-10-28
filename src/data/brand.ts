@@ -7,7 +7,7 @@ export const platforms = {
   twitch: {
     name: "Twitch",
     action: "Watch live",
-    href: "https://www.twitch.tv/boardgaymesjames",
+    href: "https://www.twitch.tv/jamesstimsgaymes",
   },
   boardGameGeek: {
     name: "BoardGameGeek",
@@ -38,13 +38,17 @@ export const mediaMetrics = {
     followers: "2,048",
   },
   boardGameGeek: {
-    thumbs: "14.926",
+    thumbs: "14,926",
     geekGold: "13,141",
     geekListThumbs: "1,078",
     videoThumbs: "1,243",
   },
   twitch: {
-    followers: "686",
+    followers: "687",
+    averageViewers: "18",
+    peakViewers: "91",
+    highestConcurrentViewers: "91",
+    allTimeActiveSubscribers: "12",
   },
 } as const;
 

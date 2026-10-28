@@ -14,16 +14,16 @@ export function MediaPage() {
             Publisher partnerships · Media kit · {mediaMetrics.period}
           </p>
           <h1 className="mt-5 font-display text-5xl leading-[.9] text-purple-800 md:text-7xl md:leading-[.85]">
-            High-quality streams. Polished video. Independent opinions.
+            Real games. Sharp 2K video. Independent opinions.
           </h1>
           <Tagline className="mt-5 text-pink-500" />
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-slate-700">
             Board Gaymes James creates carefully produced live teach-and-plays
-            and YouTube coverage that let players see how a game works at the
-            table. Reviews and analysis bring a queer, autistic, Euro-gamer
-            perspective to the details that help people decide what to play.
-            Scheduled streams are also embedded on BoardGameGeek during prime
-            viewing times.
+            and clear 2K YouTube coverage, so players can follow the table on a
+            phone or enjoy the detail on a TV. Reviews and analysis bring a
+            queer, autistic, Euro-gamer perspective to the details that help
+            people decide what to play. Scheduled streams are also embedded on
+            BoardGameGeek during prime viewing times.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -41,8 +41,9 @@ export function MediaPage() {
             </a>
           </div>
           <p className="mt-6 text-sm font-bold text-slate-700">
-            {mediaMetrics.youtube.subscribers} YouTube subscribers · Live
-            streams embedded on BoardGameGeek · Independent editorial coverage
+            Clear 2K video · {mediaMetrics.youtube.subscribers} YouTube
+            subscribers · Live streams embedded on BoardGameGeek · Independent
+            editorial coverage
           </p>
         </div>
       </header>
@@ -72,12 +73,31 @@ export function MediaPage() {
         </article>
       </section>
 
+      <section className="grid gap-8 bg-teal-300 px-5 py-12 md:px-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center lg:px-16">
+        <p className="text-l font-black uppercase tracking-[.18em]">
+          Made for the screen you have
+        </p>
+        <div>
+          <h2 className="font-display text-4xl leading-none md:text-7xl">
+            See the table in sharp detail.
+          </h2>
+          <p className="mt-5 max-w-4xl text-lg leading-relaxed">
+            Board games are visual. Clear 2K video keeps boards, cards, and
+            decisions clear, while crisp, clean audio from every player makes
+            table talk and rules explanations easy to follow. Viewers can enjoy
+            the detail on a phone or settle in front of a TV. The on-demand
+            video makes it easy to pause, revisit a moment, and share the play
+            experience.
+          </p>
+        </div>
+      </section>
+
       <section className="bg-purple-800 px-5 py-16 text-white md:px-10 md:py-20 lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em] text-yellow-300">
+        <p className="text-s font-black uppercase tracking-[.18em] text-yellow-300">
           Current reach
         </p>
         <h2 className="mt-3 max-w-5xl font-display text-4xl leading-none md:text-8xl">
-          The numbers publishers need first.
+          The numbers you need first.
         </h2>
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           <article className="rounded-[2rem] bg-yellow-300 p-8 text-slate-950 md:p-10">
@@ -87,33 +107,37 @@ export function MediaPage() {
             <strong className="mt-5 block font-display text-8xl leading-none md:text-9xl">
               {mediaMetrics.youtube.views}
             </strong>
-            <p className="mt-5 font-bold">August 2026</p>
+            <p className="mt-5 font-bold">{mediaMetrics.period}</p>
           </article>
           <div className="grid gap-5 sm:grid-cols-2">
-            <article className="rounded-[2rem] bg-pink-500 p-7 text-slate-950">
+            <article className="flex flex-col rounded-[2rem] bg-pink-500 p-7 text-slate-950">
               <p className="text-xs font-black uppercase tracking-[.18em]">
                 Instagram views
               </p>
               <strong className="mt-5 block font-display text-6xl leading-none md:text-7xl">
                 {mediaMetrics.instagram.views}
               </strong>
-              <p className="mt-4 text-sm font-bold">August 2026</p>
+              <p className="mt-auto pt-4 text-sm font-bold">
+                {mediaMetrics.period}
+              </p>
             </article>
-            <article className="rounded-[2rem] bg-orange-400 p-7 text-slate-950">
+            <article className="flex flex-col rounded-[2rem] bg-orange-400 p-7 text-slate-950">
               <p className="text-xs font-black uppercase tracking-[.18em]">
-                Twitch Followers
+                Twitch followers
               </p>
               <strong className="mt-5 block font-display text-6xl leading-none md:text-7xl">
                 {mediaMetrics.twitch.followers}
               </strong>
-              <p className="mt-4 text-sm font-bold">August 2026</p>
+              <p className="mt-auto pt-4 text-sm font-bold">
+                {mediaMetrics.period}
+              </p>
             </article>
           </div>
         </div>
       </section>
 
       <section className="grid gap-8 bg-yellow-300 px-5 py-12 md:px-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center lg:px-16">
-        <p className="text-xs font-black uppercase tracking-[.18em]">
+        <p className="text-l font-black uppercase tracking-[.18em]">
           Where players discover games
         </p>
         <div>
@@ -121,11 +145,10 @@ export function MediaPage() {
             Live on Twitch. Embedded on BoardGameGeek.
           </h2>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed">
-            Scheduled streams are embedded on BoardGameGeek during prime
-            viewing times, bringing a live teach-and-play into a place where
-            players are already researching games. The stream recording can
-            also keep working as an on-demand YouTube video after the live
-            event.
+            Scheduled streams are embedded on BoardGameGeek during prime viewing
+            times, bringing a live teach-and-play into a place where players are
+            already researching games. The stream recording is also kept as an
+            on-demand YouTube video after the live event.
           </p>
         </div>
       </section>
@@ -166,23 +189,24 @@ export function MediaPage() {
         </h2>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700">
           A game can be explored through live play, a polished video that
-          remains available afterward, and written or visual analysis. The
-          right mix depends on the game and the project.
+          remains available afterward, and written or visual analysis. The right
+          mix depends on the game and the project.
         </p>
         <div className="mt-10 grid gap-px border-2 border-slate-950 bg-slate-950 sm:grid-cols-2">
           <article className="bg-amber-50 p-7">
             <h3 className="text-3xl font-black">Live teach & play</h3>
             <p className="mt-4 leading-relaxed">
-              Players see the rules taught, decisions made, and table
-              experience unfold in a carefully produced stream on Twitch and
-              YouTube. Scheduled streams can also be embedded on BoardGameGeek.
+              Players see the rules taught, decisions made, and table experience
+              unfold in live on Twitch and embedded on BoardGameGeek.
             </p>
             <a
               className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
-              href="https://www.twitch.tv/boardgaymesjames"
+              href="https://www.twitch.tv/jamesstimsgaymes"
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackEvent("platform_outbound", "media_live_sample")}
+              onClick={() =>
+                trackEvent("platform_outbound", "media_live_sample")
+              }
             >
               Watch live coverage <ArrowRight className="size-4" />
             </a>
@@ -190,16 +214,18 @@ export function MediaPage() {
           <article className="bg-amber-50 p-7">
             <h3 className="text-3xl font-black">YouTube uploads</h3>
             <p className="mt-4 leading-relaxed">
-              Polished video coverage gives viewers an accessible way to
-              revisit the game, see its components and decisions, and share
-              the experience after the live broadcast.
+              List videos that contain my review system not just a list rank,
+              and uploads pf previous live events. Review copies may not make it
+              onto a list or live stream.
             </p>
             <a
               className="mt-6 inline-flex items-center gap-2 font-black underline underline-offset-4"
               href="https://www.youtube.com/@BoardGaymesJames"
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackEvent("platform_outbound", "media_video_sample")}
+              onClick={() =>
+                trackEvent("platform_outbound", "media_video_sample")
+              }
             >
               Watch YouTube videos <ArrowRight className="size-4" />
             </a>
@@ -215,7 +241,9 @@ export function MediaPage() {
               href="https://boardgamegeek.com/threads/user/484692?forumname=reviews&parenttype=boardgame&sort=recent"
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackEvent("platform_outbound", "media_review_sample")}
+              onClick={() =>
+                trackEvent("platform_outbound", "media_review_sample")
+              }
             >
               Read reviews on BoardGameGeek <ArrowRight className="size-4" />
             </a>
@@ -231,7 +259,9 @@ export function MediaPage() {
               href="https://www.instagram.com/boardgaymesjames/"
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackEvent("platform_outbound", "media_social_sample")}
+              onClick={() =>
+                trackEvent("platform_outbound", "media_social_sample")
+              }
             >
               See Instagram coverage <ArrowRight className="size-4" />
             </a>
@@ -341,6 +371,14 @@ export function MediaPage() {
             <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-7">
               <div>
                 <strong className="text-3xl font-black">
+                  {mediaMetrics.youtube.impressions}
+                </strong>
+                <p className="text-sm text-slate-500">
+                  Impressions · +{mediaMetrics.youtube.impressionsGrowth}
+                </p>
+              </div>
+              <div>
+                <strong className="text-3xl font-black">
                   {mediaMetrics.youtube.views}
                 </strong>
                 <p className="text-sm text-slate-500">Views</p>
@@ -447,7 +485,7 @@ export function MediaPage() {
           <article className="flex flex-col rounded-[2rem] border-2 border-slate-950 bg-white p-7">
             <a
               className="inline-flex items-center gap-2 text-3xl font-black hover:text-pink-600"
-              href="https://www.twitch.tv/boardgaymesjames"
+              href="https://www.twitch.tv/jamesstimsgaymes"
               target="_blank"
               rel="noreferrer"
               onClick={() => trackEvent("platform_outbound", "media_twitch")}
@@ -455,6 +493,36 @@ export function MediaPage() {
               Twitch <ArrowRight className="size-5" />
             </a>
 
+            <div className="mt-7 grid grid-cols-2 gap-x-5 gap-y-6">
+              <div>
+                <strong className="text-3xl font-black">
+                  {mediaMetrics.twitch.averageViewers}
+                </strong>
+                <p className="text-sm text-slate-500">Average viewers</p>
+              </div>
+              <div>
+                <strong className="text-3xl font-black">
+                  {mediaMetrics.twitch.peakViewers}
+                </strong>
+                <p className="text-sm text-slate-500">Peak viewers</p>
+              </div>
+              <div>
+                <strong className="text-3xl font-black">
+                  {mediaMetrics.twitch.highestConcurrentViewers}
+                </strong>
+                <p className="text-sm text-slate-500">
+                  Highest concurrent viewers
+                </p>
+              </div>
+              <div>
+                <strong className="text-3xl font-black">
+                  {mediaMetrics.twitch.allTimeActiveSubscribers}
+                </strong>
+                <p className="text-sm text-slate-500">
+                  All-time active subscribers
+                </p>
+              </div>
+            </div>
             <p className="mt-7 border-t border-slate-200 pt-5 font-black">
               {mediaMetrics.twitch.followers} followers
             </p>

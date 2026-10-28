@@ -54,7 +54,7 @@ export function HomePage() {
               {mediaMetrics.youtube.impressions}
             </strong>
             <p className="mt-1 text-sm font-bold">
-              YouTube impressions · latest 28 days
+              YouTube impressions · October 2026
             </p>
           </div>
           <div>
@@ -62,14 +62,16 @@ export function HomePage() {
               {mediaMetrics.instagram.views}
             </strong>
             <p className="mt-1 text-sm font-bold">
-              Instagram views · latest insights
+              Instagram views · October 2026
             </p>
           </div>
           <div>
             <strong className="font-display text-5xl">
               {mediaMetrics.boardGameGeek.thumbs}
             </strong>
-            <p className="mt-1 text-sm font-bold">BoardGameGeek thumbs</p>
+            <p className="mt-1 text-sm font-bold">
+              BoardGameGeek thumbs · October 2026
+            </p>
           </div>
         </div>
       </section>
